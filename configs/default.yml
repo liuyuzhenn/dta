@@ -1,0 +1,49 @@
+seed: 0
+
+dataset_configs:
+  name: "dta_dataset"
+  path: "./data" # path to the dataset folder, which contains X sets of .mat files
+  batch_size: 1
+  train_size: 1000 # number of training graphs 
+  val_size: 100 # number of validation graphs 
+  test_size: 100 # number of test graphs 
+
+model_configs:
+  name: "multi_net" # necessary
+  mlp: [24, 24]
+  num_features: [24, 24, 24] # feature dimenstion of LOB blocks
+  num_layers: [4, 4, 4] # layer numbers of LOB blocks
+  iterations: [4, 4, 4] # iterations of LOB blocks
+  RDIB: true # use RDIB
+  AFN: true # use AFN
+  
+loss_configs:
+  name: "iter_nrmse_loss"
+  gamma: 0.8
+  align: false
+  robust_align: false
+
+optimizer_configs:
+  name: "Adam" # necessary
+  lr: 0.001
+  betas: [0.9, 0.999]
+  weight_decay: 0.0
+
+train_configs:
+  name: 'dta_trainer' # necessary
+  device: "cuda" # necessary
+  log_dir: "experiments/exp01"
+  data_parallel: false
+  enable_tensorboard: true
+  num_epochs: 2000
+  checkpoint: ""
+  summary_freq: 100
+
+test_configs:
+  name: "dta_trainer"
+  device: "cuda" # necessary
+  split: "test"
+  data_parallel: false # necessary
+  checkpoint: ""
+  file_path: ""
+
