@@ -46,11 +46,13 @@ python test.py --configs config.yaml
 ## Citation
 
 ```
-@article{Liu_2026_DeepTA,
-    author    = {Liu, Yuzhen and Dong, Qiulei},
-    title     = {DeepTA: High-Speed Deep Camera Translation Averaging with Reverse Direction Invariance},
-    booktitle = {International Journal of Computer Vision},
-    year      = {2026},
+@article{liu2026deeptA,
+  title={DeepTA: High-Speed Deep Camera Translation Averaging with Reverse Direction Invariance},
+  author={Liu, Y. and Dong, Q.},
+  journal={International Journal of Computer Vision},
+  volume={134},
+  pages={132},
+  year={2026},
+  doi={10.1007/s11263-025-02714-x}
 }
-
 ```
